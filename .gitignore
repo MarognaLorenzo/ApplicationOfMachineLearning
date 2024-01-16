@@ -1,3 +1,5 @@
-*.ipynb_checkpoints
-*env/
-*.DS_Store
+.vscode/
+Assignment3/INFOB3APML Assignment 3.pdf
+Assignment3/others/__pycache__/viz.cpython-311.pyc
+Assignment3/others/data/filtered_data.txt
+Assignment4/mazelab/
