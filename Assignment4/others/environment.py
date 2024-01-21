@@ -52,6 +52,7 @@ class TaskEnv(gym.Env):
         super().__init__()
         self.start_idx = [[1, 1]]
         self.goal_idx = [[int(size * .75), int(size * .75)]]
+        self.seed(42)
         self.maze = Maze(random_maze(width=size, height=size, complexity=.7, density=.9))
         self.motions = VonNeumannMotion()
         self.viewer = None
@@ -61,7 +62,6 @@ class TaskEnv(gym.Env):
         self.goal_reward = goal_reward
         self.invalid_reward = invalid_reward
         self.time_reward_multiplicator = time_reward_multiplicator
-        self.seed()
         self.observation_space = Box(low=0, high=len(self.maze.objects), shape=self.maze.size, dtype=np.uint8)
         self.action_space = Discrete(len(self.motions))
         self.episode_actions = []
